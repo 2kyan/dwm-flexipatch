@@ -164,11 +164,17 @@ static void (*bartabmonfns[])(Monitor *) = { NULL /* , customlayoutfn */ };
 #endif // MONOCLE_LAYOUT
 #endif // BAR_TABGROUPS_PATCH
 #if BAR_PANGO_PATCH
-static const char font[]                 = "monospace 10";
+//static const char font[]                 = "monospace 10";
+static const char font[]                 = "Source Code Pro:size=12:style=Bold";
 #else
-static const char *fonts[]               = { "monospace:size=10" };
+//static const char *fonts[]               = { "monospace:size=10" };
+static const char *fonts[]               = { "Source Code Pro:size=12:style=Bold",
+                                              "Font Awesome 6 Free Solid:size=12"
+                                           };
 #endif // BAR_PANGO_PATCH
-static const char dmenufont[]            = "monospace:size=10";
+//static const char dmenufont[]            = "monospace:size=10";
+static const char dmenufont[]            = "Source Code Pro:size=12:style=Bold";
+
 
 static char c000000[]                    = "#000000"; // placeholder value
 
@@ -508,8 +514,8 @@ static const Rule rules[] = {
 	RULE(.wintype = WTYPE "UTILITY", .isfloating = 1)
 	RULE(.wintype = WTYPE "TOOLBAR", .isfloating = 1)
 	RULE(.wintype = WTYPE "SPLASH", .isfloating = 1)
-	RULE(.class = "Gimp", .tags = 1 << 4)
-	RULE(.class = "Firefox", .tags = 1 << 7)
+	RULE(.class = "Code", .tags = 1 << 7)
+	RULE(.class = "firefox", .tags = 1 << 8)
 	#if RENAMED_SCRATCHPADS_PATCH
 	RULE(.instance = "spterm", .scratchkey = 's', .isfloating = 1)
 	#elif SCRATCHPADS_PATCH
